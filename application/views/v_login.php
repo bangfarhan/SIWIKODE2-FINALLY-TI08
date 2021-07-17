@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Quantum Able Bootstrap 4 Admin Dashboard Template</title>
+	<title>SIWIKODE</title>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -21,8 +21,8 @@
 	<meta name="author" content="codedthemes">
 
 	<!-- Favicon icon -->
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/favicon.png" type="image/x-icon">
-	<link rel="icon" href="<?php echo base_url(); ?>assets/images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/logo_siwikode.png" type="image/x-icon">
+	<link rel="icon" href="<?php echo base_url(); ?>assets/images/logo_siwikode.ico" type="image/x-icon">
 
 	<!-- Google font-->
    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
@@ -95,10 +95,15 @@
 								<button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN</button>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-xs-10 offset-xs-1">
+								<a href="<?= site_url('Dashboard') ?>" class="btn btn-success btn-md btn-block waves-effect text-center m-b-20">Kembali ke Beranda</a>
+							</div>
+						</div>
 						<!-- <div class="card-footer"> -->
 						<div class="col-sm-12 col-xs-12 text-center">
 							<span class="text-muted">Don't have an account?</span>
-							<a href="register2.html" class="f-w-600 p-l-5">Sign up Now</a>
+							<a href="<?= site_url('Register') ?>" class="f-w-600 p-l-5">Sign up Now</a>
 						</div>
 
 						<!-- </div> -->

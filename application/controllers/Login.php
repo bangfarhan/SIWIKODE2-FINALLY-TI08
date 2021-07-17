@@ -1,12 +1,15 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Login extends CI_Controller
+{
 	public function __construct()
-    {	parent:: __construct();
-
-       
-        }
+	{
+		parent::__construct();
+		if ($this->session->userdata('status') == "login") {
+			redirect('User');
+		}
+	}
 	public function index()
 	{
 		$this->load->view('v_login');
@@ -15,7 +18,7 @@ class Login extends CI_Controller {
 	{
 		$username   = $this->input->post('username');
 		$password   = $this->input->post('password');
-		$result     = $this->M_login->getUser($username,$password);
+		$result     = $this->M_login->getUser($username, $password);
 		if ($result) {
 			$newdata   = array(
 				'id'        => $result['id'],
@@ -24,13 +27,10 @@ class Login extends CI_Controller {
 				'status'    => "login"
 			);
 			$this->session->set_userdata($newdata);
-			if ($this->session->userdata('id_status') == 1) {
-				redirect('Admin');
-			}
-			if($this->session->userdata('id_status') == 2){
+			if ($this->session->userdata('id_status') != null) {
 				redirect('User');
 			}
-		} else{
+		} else {
 			redirect('Login');
 		}
 	}
